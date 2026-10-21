@@ -1,0 +1,448 @@
+/* ═══════════════════════════════════════════════════════════
+   landing.css – Epicenter Helsinki Women in Tech Campaign Page
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --epi-black:    #070913;
+  --epi-surface:  #0d1221;
+  --epi-card:     #131928;
+  --epi-border:   rgba(255,255,255,0.08);
+  --epi-gold:     #d4a843;
+  --epi-teal:     #00c9b1;
+  --epi-purple:   #9b6fda;
+  --epi-white:    #f0f0f0;
+  --epi-muted:    #8893a6;
+  --radius:       16px;
+  --radius-sm:    10px;
+  --trans:        0.25s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--epi-black);
+  color: var(--epi-white);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 { line-height: 1.2; }
+a { text-decoration: none; color: inherit; }
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--trans), box-shadow var(--trans), background var(--trans);
+  border: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--epi-teal), var(--epi-purple));
+  color: #fff;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,201,177,0.35);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--epi-teal);
+  border: 1.5px solid var(--epi-teal);
+}
+.btn-secondary:hover {
+  background: rgba(0,201,177,0.1);
+  transform: translateY(-2px);
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  padding: 100px 24px 80px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,201,177,0.18) 0%, transparent 70%),
+    var(--epi-black);
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fff 30%, var(--epi-teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--epi-muted);
+  max-width: 600px;
+  margin: 0 auto 36px;
+}
+.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ── Section Common ───────────────────────────────────────── */
+section {
+  padding: 80px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+section h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  margin-bottom: 12px;
+  text-align: center;
+}
+section > p {
+  text-align: center;
+  color: var(--epi-muted);
+  max-width: 640px;
+  margin: 0 auto 40px;
+  font-size: 1.05rem;
+}
+
+/* ── Gift Selection ───────────────────────────────────────── */
+.gift-selection { padding-top: 60px; }
+
+.gift-intro {
+  background: rgba(212,168,67,0.1);
+  border: 1px solid rgba(212,168,67,0.3);
+  border-radius: var(--radius-sm);
+  padding: 14px 20px;
+  color: var(--epi-gold);
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+/* Gift card grid */
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 20px;
+  margin-bottom: 56px;
+}
+
+.gift-card {
+  position: relative;
+  background: var(--epi-card);
+  border: 2px solid var(--epi-border);
+  border-radius: var(--radius);
+  padding: 28px 20px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--trans), transform var(--trans), box-shadow var(--trans);
+  overflow: hidden;
+}
+.gift-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--epi-teal), var(--epi-purple));
+  opacity: 0;
+  transition: opacity var(--trans);
+  z-index: 0;
+}
+.gift-card:hover {
+  border-color: var(--epi-teal);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,201,177,0.2);
+}
+.gift-card.selected {
+  border-color: var(--epi-teal);
+  box-shadow: 0 0 0 3px rgba(0,201,177,0.25), 0 12px 32px rgba(0,201,177,0.2);
+}
+.gift-card > * { position: relative; z-index: 1; }
+
+.gift-emoji {
+  font-size: 2.75rem;
+  margin-bottom: 12px;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+.gift-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--epi-white);
+}
+.gift-desc {
+  font-size: 0.84rem;
+  color: var(--epi-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.gift-select-indicator {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gift-select-indicator span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--epi-teal);
+  background: rgba(0,201,177,0.12);
+  border: 1px solid var(--epi-teal);
+  border-radius: 100px;
+  padding: 4px 14px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--trans), transform var(--trans);
+  letter-spacing: 0.05em;
+}
+.gift-card.selected .gift-select-indicator span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Gift Form ────────────────────────────────────────────── */
+.gift-form {
+  background: var(--epi-surface);
+  border: 1px solid var(--epi-border);
+  border-radius: var(--radius);
+  padding: 40px 36px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.gift-form h3 {
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.gift-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.gift-form label span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--epi-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.gift-form input[type="text"],
+.gift-form input[type="email"] {
+  background: var(--epi-card);
+  border: 1.5px solid var(--epi-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  color: var(--epi-white);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--trans);
+  outline: none;
+}
+.gift-form input:focus {
+  border-color: var(--epi-teal);
+}
+.checkbox-label {
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  cursor: pointer;
+}
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--epi-teal);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.checkbox-label span { font-size: 0.9rem !important; text-transform: none !important; letter-spacing: 0 !important; color: var(--epi-muted) !important; }
+
+.gift-form .btn-primary {
+  width: 100%;
+  justify-content: center;
+  padding: 14px 24px;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+.form-error {
+  color: #ff6b6b;
+  font-size: 0.88rem;
+  text-align: center;
+  margin-bottom: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Success modal */
+.modal {
+  background: var(--epi-surface);
+  border: 1px solid var(--epi-teal);
+  border-radius: var(--radius);
+  padding: 48px 36px;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+.modal p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  color: var(--epi-white);
+}
+.hidden { display: none !important; }
+
+/* ── Discover Epicenter ───────────────────────────────────── */
+.discover-epicenter {
+  text-align: center;
+  background: linear-gradient(180deg, transparent, rgba(0,201,177,0.05), transparent);
+}
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.discover-item {
+  background: var(--epi-card);
+  border: 1px solid var(--epi-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: left;
+}
+.discover-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--epi-teal);
+}
+.discover-item p { font-size: 0.92rem; color: var(--epi-muted); }
+
+/* ── Pikkujoulut ──────────────────────────────────────────── */
+.pikkujoulut {
+  background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(155,111,218,0.15) 0%, transparent 70%);
+  border: 1px solid rgba(155,111,218,0.2);
+  border-radius: 24px;
+  text-align: center;
+}
+.pikkujoulut p {
+  color: var(--epi-muted);
+  max-width: 540px;
+  margin: 0 auto 32px;
+}
+
+/* ── Workspace & Sales ────────────────────────────────────── */
+.workspace-sales { text-align: center; }
+.workspace-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Events & Studios ─────────────────────────────────────── */
+.events-studios { text-align: center; }
+.event-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.event-card {
+  background: var(--epi-card);
+  border: 1px solid var(--epi-border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  text-align: left;
+  transition: border-color var(--trans), transform var(--trans);
+}
+.event-card:hover {
+  border-color: var(--epi-teal);
+  transform: translateY(-4px);
+}
+.event-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+.event-card p {
+  font-size: 0.9rem;
+  color: var(--epi-muted);
+  text-align: left;
+  margin: 0 0 20px;
+}
+.event-card a { margin-right: 10px; margin-top: 4px; }
+
+/* ── Contact Cards ────────────────────────────────────────── */
+.contact-cards {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 24px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.contact-card {
+  background: var(--epi-card);
+  border: 1px solid var(--epi-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+  min-width: 220px;
+  flex: 1;
+  max-width: 340px;
+}
+.contact-card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.contact-card p { font-size: 0.88rem; color: var(--epi-muted); margin-bottom: 18px; }
+
+/* ── Footer ───────────────────────────────────────────────── */
+.site-footer {
+  background: var(--epi-surface);
+  border-top: 1px solid var(--epi-border);
+  padding: 48px 24px 32px;
+  text-align: center;
+}
+.footer-logo {
+  height: 36px;
+  width: auto;
+  margin-bottom: 16px;
+  opacity: 0.85;
+}
+.site-footer p {
+  font-size: 0.88rem;
+  color: var(--epi-muted);
+  margin-bottom: 16px;
+}
+.site-footer a { color: var(--epi-teal); transition: opacity var(--trans); }
+.site-footer a:hover { opacity: 0.75; }
+.social-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 16px; }
+.social-links a { font-size: 0.88rem; color: var(--epi-muted); }
+.social-links a:hover { color: var(--epi-teal); }
+
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .gift-form { padding: 28px 20px; }
+  .hero { padding: 72px 20px 60px; }
+  section { padding: 60px 20px; }
+}
