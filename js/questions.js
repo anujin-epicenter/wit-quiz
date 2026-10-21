@@ -56,11 +56,29 @@ const PRIZE_TIERS = {
     icon: "🏆",
     badgeTheme: "badge-gold",
     glowColor: "rgba(255, 215, 0, 0.55)",
-    description: "Flawless victory! You crushed every single question with unmatched wit and lightning instincts. You officially own the room and the Epicenter Hall of Fame!",
-    physicalGift: "🛍️ Epicenter Tote Bag + Ceramic Mug + Notebook Set!",
-    giftDetail: "Grand Prize Bundle • Includes Epicenter Notebook, Pencil & Finnish Licorice Candy",
+    description: "Flawless victory! You crushed every single question with unmatched wit and lightning instincts. Choose your ultimate prize below!",
+    selectableGifts: [
+      {
+        id: "grand-bundle",
+        name: "🛍️ Epicenter Tote Bag Bundle (Tote + Mug + Notebook + Licorice)",
+        badge: "VIP Grand Prize",
+        desc: "The complete swag bundle with Tote Bag, Ceramic Mug, Notebook, Pencil & Finnish Licorice!"
+      },
+      {
+        id: "day-pass-vip",
+        name: "🏢 Free Epicenter Helsinki 1-Day Pass (Mikonkatu 9)",
+        badge: "Test Our Space",
+        desc: "Experience a full day of downtown coworking, community lounges, and innovation suites!"
+      },
+      {
+        id: "mug-pack",
+        name: "☕ Epicenter Ceramic Mug + Notebook & Licorice",
+        badge: "Coffee & Code Set",
+        desc: "Limited edition ceramic mug, notebook, pencil & authentic Finnish licorice."
+      }
+    ],
     perk: "Unlocked: Tech Royalty Status & Infinite Bragging Rights ⚡",
-    bragText: "🏆 Just scored 100% on the Women in Tech Quiz at Epicenter Helsinki and won the Grand Tote Bag & Mug Bundle!"
+    bragText: "🏆 Just scored 100% on the Women in Tech Quiz at Epicenter Helsinki and unlocked the Grand Swag Bundle!"
   },
   2: {
     tier: "Tier 2: 66% Mastery",
@@ -69,11 +87,29 @@ const PRIZE_TIERS = {
     icon: "🥈",
     badgeTheme: "badge-silver",
     glowColor: "rgba(192, 192, 210, 0.45)",
-    description: "2 out of 3 in the bag! You’re clearly in the know and bringing serious innovation energy to Epicenter today. Amazing performance!",
-    physicalGift: "☕ Epicenter Ceramic Mug + Notebook & Pencil!",
-    giftDetail: "Silver Prize Pack • Includes Finnish Local Licorice Candy",
+    description: "2 out of 3 in the bag! You’re clearly in the know and bringing serious innovation energy to Epicenter today. Choose your gift below:",
+    selectableGifts: [
+      {
+        id: "mug-set",
+        name: "☕ Epicenter Ceramic Mug + Notebook & Pencil",
+        badge: "Silver Swag Pack",
+        desc: "Limited edition ceramic mug, notebook, pencil & Finnish local licorice candy."
+      },
+      {
+        id: "day-pass",
+        name: "🏢 Free Epicenter Helsinki 1-Day Pass (Mikonkatu 9)",
+        badge: "Test Our Space",
+        desc: "Work for a day from our downtown Helsinki hub alongside inspiring scale-ups and founders."
+      },
+      {
+        id: "notebook-licorice",
+        name: "📓 Epicenter Notebook & Finnish Licorice Candy",
+        badge: "Creative Duo",
+        desc: "Sleek Epicenter notebook, pencil & authentic Finnish licorice."
+      }
+    ],
     perk: "Unlocked: VIP Disruptor Distinction ✨",
-    bragText: "🥈 Scored 2/3 with Big Brain Energy on the Epicenter Women in Tech Quiz and claimed the Epicenter Mug Set!"
+    bragText: "🥈 Scored 2/3 with Big Brain Energy on the Epicenter Women in Tech Quiz and claimed my Epicenter gift!"
   },
   1: {
     tier: "Tier 3: 33% Mastery",
@@ -82,11 +118,23 @@ const PRIZE_TIERS = {
     icon: "🥉",
     badgeTheme: "badge-bronze",
     glowColor: "rgba(205, 127, 50, 0.45)",
-    description: "You took on the clock with zero hesitation! You landed on the board and walked away with awesome Epicenter gear.",
-    physicalGift: "📓 Epicenter Notebook & Pencil + Licorice Candy!",
-    giftDetail: "Bronze Prize Pack • Includes authentic Finnish Local Licorice",
+    description: "You took on the clock with zero hesitation! You landed on the board and unlocked your Epicenter reward. Choose below:",
+    selectableGifts: [
+      {
+        id: "notebook-rebel",
+        name: "📓 Epicenter Notebook & Pencil + Licorice Candy",
+        badge: "Bronze Pack",
+        desc: "Epicenter notebook, pencil & sweet Finnish local licorice."
+      },
+      {
+        id: "day-pass-rebel",
+        name: "🏢 Free Epicenter Helsinki 1-Day Pass (Mikonkatu 9)",
+        badge: "Test Our Space",
+        desc: "Check out our central Kluuvi workspaces, meeting rooms & community!"
+      }
+    ],
     perk: "Unlocked: Certified Tech Rebel 💥",
-    bragText: "🥉 Rocking the Rising Disruptor medal & Notebook from the Epicenter Women in Tech Quiz!"
+    bragText: "🥉 Rocking the Rising Disruptor award from the Epicenter Women in Tech Quiz!"
   },
   0: {
     tier: "Tier 4: Pure Vibes",
@@ -95,11 +143,48 @@ const PRIZE_TIERS = {
     icon: "☕",
     badgeTheme: "badge-blue",
     glowColor: "rgba(56, 189, 248, 0.45)",
-    description: "Living on the edge! You’re here for the epic networking, good coffee, and immaculate event vibes. Enjoy a sweet treat and run it back!",
-    physicalGift: "🍬 Finnish Local Licorice Candy + Epicenter Pencil!",
-    giftDetail: "Sweet Appreciation Treat • Feel free to play again to win the Mug or Tote Bag!",
+    description: "Living on the edge! You’re here for the epic networking, good coffee, and immaculate event vibes. Choose your gift below:",
+    selectableGifts: [
+      {
+        id: "sweet-treat",
+        name: "🍬 Finnish Local Licorice Candy + Epicenter Pencil",
+        badge: "Sweet Vibe Boost",
+        desc: "Delicious Finnish sweet licorice & Epicenter pencil (feel free to retry for higher tiers!)"
+      },
+      {
+        id: "day-pass-vibe",
+        name: "🏢 Free Epicenter Helsinki 1-Day Pass (Mikonkatu 9)",
+        badge: "Come Say Hi",
+        desc: "Drop by Mikonkatu 9 for great coffee, networking & flexible workspaces!"
+      }
+    ],
     perk: "Unlocked: Unlimited Free Retries & VIP Vibe Pass 🎟️",
-    bragText: "☕ Playing for the vibes at the Epicenter Women in Tech event! Taking another shot."
+    bragText: "☕ Playing for the immaculate vibes at the Epicenter Women in Tech event! Taking another shot."
+  }
+};
+
+/**
+ * EPICENTER TEAM & BUSINESS CONTACTS
+ * Direct traffic for Events/Pikkujoulut and Office Spaces/Memberships
+ */
+const EPICENTER_CONTACTS = {
+  events: {
+    name: "Serhan Çolpan",
+    role: "Head of Events & Hospitality",
+    email: "serhan@epicenterhelsinki.com",
+    tagline: "🎄 Pikkujoulut Around the Corner?",
+    description: "Planning your company's Pikkujoulut (holiday season party) or tech gathering? Host an unforgettable event in Epicenter Helsinki's state-of-the-art event arenas and lounges on Mikonkatu.",
+    cta: "✉️ Email Serhan for Events / Pikkujoulut",
+    subject: "Epicenter Helsinki — Pikkujoulut & Event Venue Inquiry"
+  },
+  sales: {
+    name: "Harri Schlobohm",
+    role: "Head of Sales",
+    email: "harri@epicenterhelsinki.com",
+    tagline: "🏢 Flexible Office Spaces & Memberships",
+    description: "Looking for private office suites, team desks, or flexible coworking in downtown Helsinki? Tour our innovation house and discover where top Nordic scale-ups grow.",
+    cta: "✉️ Email Harri for Offices & Day Pass",
+    subject: "Epicenter Helsinki — Office Spaces & Free Day Pass Inquiry"
   }
 };
 
