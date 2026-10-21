@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women in Tech Quiz ⚡ Epicenter Helsinki</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Test your wits against the clock in the Women in Tech Quiz at Epicenter Helsinki! Answer fast to earn fireworks, bragging rights, and tiered trophies.">
+  <meta name="keywords" content="quiz, women in tech, epicenter helsinki, finland tech, trivia, speed quiz, timer, fireworks, static web app">
+  <meta name="author" content="Epicenter Helsinki & Women in Tech">
+  <meta property="og:title" content="Women in Tech Quiz ⚡ Epicenter Helsinki">
+  <meta property="og:description" content="Celebrate trailblazing women in tech at Epicenter Helsinki! Fast answers earn fireworks and grand trophies.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Ambient Epicenter Spirit Graphic Layer -->
+  <div class="spirit-bg-layer" aria-hidden="true"></div>
+
+  <!-- Full-screen Canvas for Fireworks FX -->
+  <canvas id="fireworks-canvas"></canvas>
+
+  <div class="app-container">
+    <!-- Top Navigation Bar -->
+    <header class="top-nav" role="banner">
+      <div class="brand-badge" id="nav-brand-badge" title="Click for fireworks! 🎆">
+        <img src="assets/epicenter-logo.png" alt="Epicenter" class="epicenter-brand-logo">
+        <span class="wit-event-pill">Women in Tech ⚡</span>
+      </div>
+      <nav class="nav-controls" aria-label="Quick controls">
+        <button id="sound-toggle-btn" class="icon-btn" title="Toggle Sound Effects" aria-label="Toggle Sound Effects">
+          <span id="sound-icon">🔊</span>
+        </button>
+        <button id="fullscreen-btn" class="icon-btn" title="Toggle Fullscreen" aria-label="Toggle Fullscreen">
+          <span id="fullscreen-icon">⛶</span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Main Screens Container -->
+    <main class="screen-wrapper" role="main">
+      <div class="card">
+        
+        <!-- ==========================================
+             SCREEN 1: WELCOME SCREEN
+             ========================================== -->
+        <section id="screen-welcome" class="screen welcome-screen active" aria-labelledby="welcome-heading">
+          <div class="pill-tag">
+            <span aria-hidden="true">📍</span> Epicenter Helsinki • Women in Tech
+          </div>
+          
+          <h1 id="welcome-heading" class="hero-title">
+            Women in Tech <br>
+            <span class="gradient-text">Quick Quiz</span>
+          </h1>
+          
+          <p class="hero-subtitle">
+            “Quick question! We're at <strong>Women in Tech with Epicenter</strong> — want to try a super-quick quiz? 
+            No pressure, just go with your gut!” ✨
+          </p>
+
+          <!-- Feature Highlights Grid -->
+          <div class="feature-grid">
+            <div class="feature-item">
+              <span class="feature-icon" aria-hidden="true">⏱️</span>
+              <h2 class="feature-title">Live Stopwatch</h2>
+              <p class="feature-desc">Sub-second precision</p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon" aria-hidden="true">🎆</span>
+              <h2 class="feature-title">Real Fireworks</h2>
+              <p class="feature-desc">Particle bursts on correct hits</p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon" aria-hidden="true">🏆</span>
+              <h2 class="feature-title">Tiered Awards</h2>
+              <p class="feature-desc">Gold, Silver & Bronze trophies</p>
+            </div>
+          </div>
+
+          <button id="start-quiz-btn" class="btn-primary" type="button">
+            <span>Start Challenge</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 2: QUIZ SCREEN
+             ========================================== -->
+        <section id="screen-quiz" class="screen quiz-screen" aria-label="Active Quiz">
+          <!-- Quiz Header: Question Tracker & Stopwatch -->
+          <div class="quiz-header">
+            <div class="question-counter-badge">
+              Question <span id="current-q-index">1</span> of <span id="total-q-count">3</span>
+            </div>
+            <div class="timer-badge" role="timer" aria-live="off" title="Elapsed Time">
+              <span class="timer-icon" aria-hidden="true">⏱️</span>
+              <span id="timer-display" class="timer-display">00:00.0</span>
+            </div>
+          </div>
+
+          <!-- Glowing Progress Bar -->
+          <div class="progress-container" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+
+          <!-- Question Content -->
+          <div class="question-container">
+            <span id="question-category" class="category-pill">Tech Pioneer 🧠</span>
+            <h2 id="question-text" class="question-text">Loading question...</h2>
+
+            <!-- Options (A, B, C, D) -->
+            <div id="options-container" class="options-grid" role="group" aria-label="Answer Choices">
+              <!-- Dynamically populated by app.js -->
+            </div>
+
+            <!-- Did You Know / Explanation Card -->
+            <div id="explanation-card" class="explanation-card" aria-live="polite">
+              <div class="explanation-title">
+                <span aria-hidden="true">💡</span>
+                <span>Did You Know?</span>
+              </div>
+              <p id="explanation-text" class="explanation-body"></p>
+            </div>
+
+            <!-- Next Question Action Row -->
+            <div class="action-row">
+              <button id="next-question-btn" class="btn-next" type="button">
+                <span id="next-btn-text">Next Question</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 3: RESULTS & PRIZES SCREEN
+             ========================================== -->
+        <section id="screen-results" class="screen results-screen" aria-label="Quiz Results">
+          <span class="results-header-tag">Challenge Complete</span>
+          <h2 id="results-headline" class="results-title">Flawless Victory! 🎉</h2>
+
+          <!-- Award / Trophy Showcase -->
+          <div id="trophy-showcase" class="trophy-showcase badge-gold">
+            <div class="trophy-inner">
+              <div class="trophy-icon-wrapper">
+                <span id="trophy-icon" aria-hidden="true">🏆</span>
+              </div>
+              <span id="trophy-rank" class="trophy-rank-tag">Rank S • Legendary</span>
+              <h3 id="trophy-name" class="trophy-name">Grand Champion Gold Trophy</h3>
+              <p id="trophy-desc" class="trophy-desc">
+                Flawless victory! You answered all 3 questions with absolute accuracy.
+              </p>
+              <div class="trophy-perk-badge">
+                <span aria-hidden="true">🎖️</span>
+                <span id="trophy-perk">Unlocked: Bragging Rights & Hall of Fame Induction</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Performance Stats Grid -->
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-label">Final Score</div>
+              <div id="stat-score" class="stat-value">3 / 3</div>
+              <div id="stat-score-percent" class="stat-detail">100% Accuracy</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Total Time</div>
+              <div id="stat-time" class="stat-value mono">00:18.4</div>
+              <div id="stat-speed-label" class="stat-detail">⚡ Supersonic Speed</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Speed Rating</div>
+              <div id="stat-speed-summary" class="stat-value" style="font-size: 1.25rem;">Blitz Master</div>
+              <div id="stat-speed-comment" class="stat-detail">Extraordinary speed!</div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="results-actions">
+            <button id="btn-celebrate-fireworks" class="btn-primary" type="button">
+              <span>Launch Fireworks</span>
+              <span aria-hidden="true">🎆</span>
+            </button>
+            <button id="btn-copy-brag" class="btn-secondary" type="button">
+              <span>Copy Score Card</span>
+              <span aria-hidden="true">📋</span>
+            </button>
+            <button id="btn-play-again" class="btn-secondary" type="button">
+              <span>Play Again</span>
+              <span aria-hidden="true">🔄</span>
+            </button>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Toast Notice for Clipboard Feedback -->
+    <div id="toast-notice" class="toast-notice" role="status" aria-live="polite">
+      <span aria-hidden="true">✓</span>
+      <span id="toast-message">Score card copied to clipboard!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer" role="contentinfo">
+      <p>Women in Tech • Epicenter Helsinki • 100% Static Web App • Ready for GitHub Pages</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/questions.js"></script>
+  <script src="js/fireworks.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
