@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epicenter Helsinki – Women in Tech Gift Experience</title>
+  <meta name="description" content="Choose your Epicenter gift, learn about our community, and explore day‑pass & membership options at the Women in Tech event." />
+  <link rel="icon" href="For%20sharing%20externally/Logos/PNG/Epicenter_general_white.png" type="image/png" />
+  <!-- Google Fonts (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Brand Font (ALS Schlange Slab) -->
+  <style>
+    @font-face {
+      font-family: 'ALS Schlange Slab';
+      src: url('For%20sharing%20externally/Epicenter%20Fonts/ALS%20Schlange%20Slab/Art.%20Lebedev%20Studio%20-%20ALSSchlangeslab.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    body { font-family: 'ALS Schlange Slab', 'Inter', sans-serif; margin:0; background:#070913; color:#f0f0f0; }
+  </style>
+  <link rel="stylesheet" href="css/landing.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>More than a workspace.<br/>A place to connect.</h1>
+    <p class="hero-subtitle">Discover Epicenter Helsinki — a community where ambitious people, innovative companies, and new ideas come together.</p>
+    <div class="hero-cta">
+      <a href="#gift-section" class="btn-primary">Choose your gift</a>
+      <a href="https://epicenterhelsinki.com" target="_blank" class="btn-secondary">Discover Epicenter</a>
+    </div>
+  </header>
+
+  <section id="gift-section" class="gift-selection">
+    <h2>A little Epicenter something, just for you.</h2>
+    <p class="gift-intro">Choose your preferred gift and leave your details to participate. Gift preferences are subject to availability and the event's giveaway terms.</p>
+    <div class="gift-grid" id="gift-grid"></div>
+    <form id="gift-form" class="gift-form" novalidate>
+      <h3>Tell us about you</h3>
+      <label>
+        <span>First name</span>
+        <input type="text" name="firstName" required />
+      </label>
+      <label>
+        <span>Email address</span>
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        <span>Company / Role (optional)</span>
+        <input type="text" name="company" />
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="newsletter" />
+        <span>I would like to receive news and updates from Epicenter.</span>
+      </label>
+      <button type="submit" class="btn-primary">Submit my gift preference</button>
+    </form>
+    <div id="form-success" class="modal hidden">
+      <p>Thanks for stopping by! Your gift preference has been received.</p>
+      <a href="https://epicenterhelsinki.com" target="_blank" class="btn-secondary">Explore Epicenter</a>
+    </div>
+  </section>
+
+  <section class="discover-epicenter">
+    <h2>Where people and possibilities meet.</h2>
+    <div class="discover-grid">
+      <div class="discover-item">
+        <h3>Community</h3>
+        <p>Meet ambitious professionals, founders, and teams. Build meaningful connections across industries.</p>
+      </div>
+      <div class="discover-item">
+        <h3>Events & Inspiration</h3>
+        <p>Discover new ideas, share knowledge, and take part in conversations shaping the future of business and technology.</p>
+      </div>
+      <div class="discover-item">
+        <h3>Workspace & Membership</h3>
+        <p>Find a professional environment designed to help you work, connect, and grow.</p>
+      </div>
+    </div>
+    <a href="https://epicenterhelsinki.com" target="_blank" class="btn-primary">Discover Epicenter</a>
+  </section>
+
+  <section class="pikkujoulut">
+    <h2>Pikkujoulut are just around the corner.</h2>
+    <p>Planning a team celebration, company gathering, or end‑of‑year event? Let's create something worth remembering.</p>
+    <a href="mailto:serhan@epicenterhelsinki.com" class="btn-primary">Let's talk about your event</a>
+  </section>
+
+  <section class="workspace-sales">
+    <h2>Find your place at Epicenter.</h2>
+    <p>Looking for a workspace, a professional community, or a place to bring your team together? Let's find the right fit.</p>
+    <div class="workspace-actions">
+      <a href="https://epicenterhelsinki.com/day-pass" target="_blank" class="btn-primary">Try a day pass</a>
+      <a href="https://epicenterhelsinki.com/membership" target="_blank" class="btn-secondary">Find your membership</a>
+      <a href="mailto:harri@epicenterhelsinki.com" class="btn-secondary">Explore office spaces</a>
+    </div>
+  </section>
+
+  <section class="contact-cards">
+    <div class="contact-card">
+      <h3>Serhan Çolpan</h3>
+      <p>Head of Events</p>
+      <a href="mailto:serhan@epicenterhelsinki.com" class="btn-primary">Discuss an event</a>
+    </div>
+    <div class="contact-card">
+      <h3>Harri Schlobohm</h3>
+      <p>Head of Sales</p>
+      <a href="mailto:harri@epicenterhelsinki.com" class="btn-primary">Explore workspace options</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <img src="For%20sharing%20externally/Logos/PNG/Epicenter_general_white.png" alt="Epicenter logo" class="footer-logo" />
+    <p><a href="https://epicenterhelsinki.com" target="_blank">Epicector Helsinki</a> • All rights reserved</p>
+    <nav class="social-links">
+      <a href="https://twitter.com/epicenterhelsinki" target="_blank" aria-label="Twitter">Twitter</a>
+      <a href="https://www.linkedin.com/company/epicenterhelsinki" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+      <a href="https://instagram.com/epicenterhelsinki" target="_blank" aria-label="Instagram">Instagram</a>
+    </nav>
+    <p><a href="/privacy.html" target="_blank">Privacy Policy</a> • <a href="/terms.html" target="_blank">Giveaway Terms</a></p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/landing.js"></script>
+</body>
+</html>
