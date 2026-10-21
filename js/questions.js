@@ -52,46 +52,54 @@ const PRIZE_TIERS = {
   3: {
     tier: "Tier 1: 100% Mastery",
     rank: "Rank S • Pure Tech Royalty 💅",
-    title: "Epicenter Grand WIT Legend Trophy",
+    title: "Epicenter Grand WIT Legend",
     icon: "🏆",
     badgeTheme: "badge-gold",
     glowColor: "rgba(255, 215, 0, 0.55)",
     description: "Flawless victory! You crushed every single question with unmatched wit and lightning instincts. You officially own the room and the Epicenter Hall of Fame!",
+    physicalGift: "🛍️ Epicenter Tote Bag + Ceramic Mug + Notebook Set!",
+    giftDetail: "Grand Prize Bundle • Includes Epicenter Notebook, Pencil & Finnish Licorice Candy",
     perk: "Unlocked: Tech Royalty Status & Infinite Bragging Rights ⚡",
-    bragText: "🏆 Just scored 100% on the Women in Tech Quiz at Epicenter Helsinki! Unstoppable tech royalty status. Can you beat my time?"
+    bragText: "🏆 Just scored 100% on the Women in Tech Quiz at Epicenter Helsinki and won the Grand Tote Bag & Mug Bundle!"
   },
   2: {
     tier: "Tier 2: 66% Mastery",
     rank: "Rank A • Big Brain Energy 🧠",
-    title: "High-Key Innovator Badge",
+    title: "High-Key Innovator",
     icon: "🥈",
     badgeTheme: "badge-silver",
     glowColor: "rgba(192, 192, 210, 0.45)",
-    description: "2 out of 3 in the bag! You’re clearly in the know and bringing serious innovation energy to Epicenter today. So close to perfection!",
+    description: "2 out of 3 in the bag! You’re clearly in the know and bringing serious innovation energy to Epicenter today. Amazing performance!",
+    physicalGift: "☕ Epicenter Ceramic Mug + Notebook & Pencil!",
+    giftDetail: "Silver Prize Pack • Includes Finnish Local Licorice Candy",
     perk: "Unlocked: VIP Disruptor Distinction ✨",
-    bragText: "🥈 Scored 2/3 with Big Brain Energy on the Epicenter Women in Tech Quiz!"
+    bragText: "🥈 Scored 2/3 with Big Brain Energy on the Epicenter Women in Tech Quiz and claimed the Epicenter Mug Set!"
   },
   1: {
     tier: "Tier 3: 33% Mastery",
     rank: "Rank B • Fearless Rebel 🚀",
-    title: "Rising Disruptor Medal",
+    title: "Rising Disruptor",
     icon: "🥉",
     badgeTheme: "badge-bronze",
     glowColor: "rgba(205, 127, 50, 0.45)",
-    description: "You took on the clock with zero hesitation! You landed on the board, and with one quick rematch, that gold trophy is yours.",
+    description: "You took on the clock with zero hesitation! You landed on the board and walked away with awesome Epicenter gear.",
+    physicalGift: "📓 Epicenter Notebook & Pencil + Licorice Candy!",
+    giftDetail: "Bronze Prize Pack • Includes authentic Finnish Local Licorice",
     perk: "Unlocked: Certified Tech Rebel 💥",
-    bragText: "🥉 Rocking the Rising Disruptor medal from the Epicenter Women in Tech Quiz!"
+    bragText: "🥉 Rocking the Rising Disruptor medal & Notebook from the Epicenter Women in Tech Quiz!"
   },
   0: {
     tier: "Tier 4: Pure Vibes",
     rank: "Rank C • Chaotic & Thriving 🥐",
-    title: "Chief Vibe Officer Ribbon",
+    title: "Chief Vibe Officer",
     icon: "☕",
     badgeTheme: "badge-blue",
     glowColor: "rgba(56, 189, 248, 0.45)",
-    description: "Living on the edge! You’re here for the epic networking, good coffee, and immaculate event vibes. Grab a drink and run it back!",
+    description: "Living on the edge! You’re here for the epic networking, good coffee, and immaculate event vibes. Enjoy a sweet treat and run it back!",
+    physicalGift: "🍬 Finnish Local Licorice Candy + Epicenter Pencil!",
+    giftDetail: "Sweet Appreciation Treat • Feel free to play again to win the Mug or Tote Bag!",
     perk: "Unlocked: Unlimited Free Retries & VIP Vibe Pass 🎟️",
-    bragText: "☕ Playing for the immaculate vibes at the Epicenter Women in Tech event! Taking another shot."
+    bragText: "☕ Playing for the vibes at the Epicenter Women in Tech event! Taking another shot."
   }
 };
 

@@ -137,6 +137,8 @@ class QuizApp {
       trophyName: document.getElementById('trophy-name'),
       trophyDesc: document.getElementById('trophy-desc'),
       trophyPerk: document.getElementById('trophy-perk'),
+      physicalGiftTitle: document.getElementById('physical-gift-title'),
+      physicalGiftDetail: document.getElementById('physical-gift-detail'),
       statScore: document.getElementById('stat-score'),
       statScorePercent: document.getElementById('stat-score-percent'),
       statTime: document.getElementById('stat-time'),
@@ -429,6 +431,14 @@ class QuizApp {
     this.dom.trophyDesc.textContent = prize.description;
     this.dom.trophyPerk.textContent = prize.perk;
 
+    // Physical appreciation gift display
+    if (this.dom.physicalGiftTitle && prize.physicalGift) {
+      this.dom.physicalGiftTitle.textContent = prize.physicalGift;
+    }
+    if (this.dom.physicalGiftDetail && prize.giftDetail) {
+      this.dom.physicalGiftDetail.textContent = prize.giftDetail;
+    }
+
     // 5. Update Stats
     this.dom.statScore.textContent = `${this.score} / ${this.totalQuestions}`;
     const percent = Math.round((this.score / this.totalQuestions) * 100);
@@ -468,6 +478,7 @@ class QuizApp {
     const shareText = 
 `⚡ WOMEN IN TECH QUIZ @ EPICENTER HELSINKI 🇫🇮
 ${prize.icon} Award: ${prize.title} (${prize.rank})
+🎁 Event Gift: ${prize.physicalGift}
 📊 Score: ${this.score}/${this.totalQuestions} (${percent}%)
 ⏱️ Time: ${timeStr} (${speedRating.label})
 "${prize.bragText}"
