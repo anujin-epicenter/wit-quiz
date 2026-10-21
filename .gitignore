@@ -16,5 +16,8 @@ Thumbs.db
 # Logs
 *.log
 
+# Release archives
+*.zip
+
 # Large Raw Brand Assets & Playbook (>100MB exceeds GitHub push limit)
 For sharing externally/
